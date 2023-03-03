@@ -1,5 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+//View is like a div in the web world
+//Text is used to render text on the screen
+
+//react-native will map View depending on OS
+//View -> on iOS will become UIView and AndroidView on Android
 export default function App() {
   return (
     <View style={styles.container}>
