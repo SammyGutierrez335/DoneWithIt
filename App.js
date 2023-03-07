@@ -1,5 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView , Image} from 'react-native';
+import { 
+  StyleSheet, Text, View, 
+  SafeAreaView , Image, 
+  // TouchableWithoutFeedback
+  // TouchableOpacity,
+  TouchableHighlight
+} from 'react-native';
 //View is like a div in the web world
 //Text is used to render text on the screen
 
@@ -16,31 +22,37 @@ export default function App() {
   // you can also download files from the internet to minimize app size.
   // !! the require function will return a reference to the image not the actual image itself
   // console.log(('require("./assets/icon.png'));
-  const handlePress = () => console.log("This text has been pressed")
+  const handlePress = () => console.log("Image Pressed")
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>Done With It!</Text>
-      <Image 
-        // blurRadius={10}
-        fadeDuration={1000}
-        // source={require('./assets/icon.png')}
-        resizeMode={"contain"}
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300"
-      }} 
-      />
+      <Text numberOfLines={1}>Done With It!</Text>
+      {/* <TouchableWithoutFeedback onPress={handlePress}> */}
+      {/* <TouchableOpacity> */}
+      <TouchableHighlight>
+        <Image 
+          // blurRadius={10}
+          fadeDuration={1000}
+          // source={require('./assets/icon.png')}
+          resizeMode={"contain"}
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300"
+          }}
+        />
+      </TouchableHighlight>
+      {/* </TouchableOpacity> */}
+      {/* </TouchableWithoutFeedback> */}
       <StatusBar style="auto" />
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'dodgerblue',
-    alignContent: "center",
+    alignItems: "center",
     justifyContent: "center"
   },
 });
