@@ -4,7 +4,10 @@
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    // You can pass multiple styles using an array. The result is the combination of styles similar to how you use multiple css classes. The object on the right would over right what is on the left.
+    //style=[containerStyle, styles.container]
+    //it is conventional to apply styles below component but is you can also import styles from another file.
+    <SafeAreaView style={containerStyle}>
       <Button 
         color="orange"
         title="Click Me" 
@@ -25,7 +28,6 @@ export default function App() {
     </SafeAreaView>
   )
 }
-
 
 // The code below was used for familiarizing myself with view, image and touchable components.
 
@@ -85,6 +87,11 @@ export default function App() {
 // }
 
 //this is not css, but a plan JS object. React-native will map over these properties to build styles
+// const containerStyle={backgroundColor: "orange"}
+
+//Whatever object you pass to the create method you get as a result. The purposes are
+//validates the properties you pass in (throwing errors for you if you misspell a property)
+//the react-native team is working on implementation some optimizations for this, therefore it is the recommended practice. 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
