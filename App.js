@@ -1,11 +1,27 @@
-// import { 
-//   SafeAreaView , Button
-// } from 'react-native';
+  import { 
+  SafeAreaView , Button, StyleSheet, Alert
+} from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-
+      <Button 
+        color="orange"
+        title="Click Me" 
+        // onPress={() => 
+          // this api only works on iOS
+          // Alert.prompt("Fill in the Blank", "What will you type?", answer => console.log(answer))
+        // }
+        // The Alert is not a component with a visual representation but instead an api, object with various methods
+        //ctrl + spacebar while inside an object to see what propeties an object contains
+        // array of buttons is the third parameter 
+        onPress={() => Alert.alert("Question", "Will you press yes?", [
+          {text: "Yes", onPress: () => console.log("Yes was pressed")},
+          {text: "No", onPress: () => console.log("No was pressed")}
+        ])}
+        // onPress={() => alert("button pressed")}
+        // onPress={()=> console.log("button pressed")}
+      />
     </SafeAreaView>
   )
 }
@@ -68,6 +84,7 @@ export default function App() {
 //   )
 // }
 
+//this is not css, but a plan JS object. React-native will map over these properties to build styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
