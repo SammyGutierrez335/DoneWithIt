@@ -21,9 +21,10 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>Done With It!</Text>
       <Image 
-        blurRadius={10}
+        // blurRadius={10}
         fadeDuration={1000}
         // source={require('./assets/icon.png')}
+        resizeMode={"contain"}
         source={{
           width: 200,
           height: 300,
