@@ -1,5 +1,6 @@
   import { 
-  SafeAreaView , Button, StyleSheet, Alert
+  SafeAreaView , Button, StyleSheet, Alert, 
+  StatusBar, Platform
 } from 'react-native';
 
 export default function App() {
@@ -7,7 +8,7 @@ export default function App() {
     // You can pass multiple styles using an array. The result is the combination of styles similar to how you use multiple css classes. The object on the right would over right what is on the left.
     //style=[containerStyle, styles.container]
     //it is conventional to apply styles below component but is you can also import styles from another file.
-    <SafeAreaView style={containerStyle}>
+    <SafeAreaView style={styles.container}>
       <Button 
         color="orange"
         title="Click Me" 
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'dodgerblue',
-    alignItems: "center",
-    justifyContent: "center"
+    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight : '0'
   },
 });
