@@ -1,6 +1,8 @@
-  import { 
-  SafeAreaView, StyleSheet, View, StatusBar, Dimensions
+import { 
+  SafeAreaView, StyleSheet, View, StatusBar, useWindowDimensions
 } from 'react-native';
+
+import { useDeviceOrientation } from '@react-native-community/hooks';
 
 //default value is Density-independent Pixels ()
 //actually Physical Pixels = DIPs x Scale Factor of device
@@ -20,23 +22,31 @@ export default function App() {
 
   //this code below will not respond to orientation changes
   //'screen' returns the size of the entire screen while 'window' returns the visible application window (iOS dimensions are equal, different on android)
-  console.log(Dimensions.get('screen'))
+  // console.log(Dimensions.get('screen'))
+
+  //returns an object {"fontScale": 1, "height": 926, "scale": 3, "width": 428}
+  // console.log(useWindowDimensions())
+
+  // returns 'portrait' or 'landscape'
+  // console.log(useDeviceOrientation())
+  let isPortrait = useDeviceOrientation() === 'portrait'
   return (
     <SafeAreaView style={styles.container}>
       <View style={{
         backgroundColor: 'dodgerblue',
         // width: 150,
-        width: '50%',
-        height: 70
+        width: isPortrait ? '50%' : '100%',
+        height: isPortrait ? '50%' : '100%'
       }} 
       />
     </SafeAreaView>
   )
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight : '0'
+    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight : '0pt'
   },
 });
