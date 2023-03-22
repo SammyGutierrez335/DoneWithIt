@@ -17,24 +17,29 @@ export default function App() {
         backgroundColor: '#fff',
         flexDirection: 'row', // primary axis is swapped
         justifyContent: "center", //main
-        alignItems: 'flex-end', //secondary axis (aligns items within each line)
+        // alignItems: 'flex-end', //secondary axis (aligns items within each line)
+        alignItems: 'center', //secondary axis (aligns items within each line)
         alignContent: "center", //only works if you have wrapping
         flex: 1
       }}>
       <View style={{
-        backgroundColor: 'green',
-        width: 100,
-        height: 300,
-        alignSelf: 'flex-start'
+        backgroundColor: 'blue',
+        // alignSelf: 'flex-start'
+        flexBasis: 100, //flex basis can map the width or height depending on which is the primary axis
+        flexGrow: 1, //'flex' is shorthand for flexGrow (positive integers) and flexShrink (negative)
+        //flexShrink is not used as often but it informs views to shrink if there is an overflow
+        height: 100,
+        // alignSelf: 'flex-start'
       }} />
       <View style={{
-        backgroundColor: 'blue',
+        backgroundColor: 'gold',
         width: 100,
         height: 100,
       }} />
         <View style={{
-          backgroundColor: 'red',
-          width: 100,
+          backgroundColor: 'tomato',
+          // width: 100,
+          flex: -1,
           height: 100,
         }} />
       </View>
