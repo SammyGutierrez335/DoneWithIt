@@ -22,6 +22,15 @@ import {
                     uri: "https://picsum.photos/460/650"
                 }}
                 />
+                <View style={{position: 'absolute', top: 10, alignItems: 'center',}}>
+                    <Image 
+                    fadeDuration={1000}
+                    resizeMode={'contain'}
+                    source={require('./assets/d-letter-logo.png')}
+                    style={{width: 160, height: 160}}
+                    />
+                    <Text style={{ color: "white", fontSize: "16"}}>Done With It</Text>
+                </View>
                     </View>
             <View style={{
                     backgroundColor: 'white',
