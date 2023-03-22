@@ -1,10 +1,28 @@
 import { 
-    SafeAreaView, StyleSheet, View, TouchableNativeFeedback, Text
+    SafeAreaView, StyleSheet, View, TouchableNativeFeedback, Text, Image
   } from 'react-native';
   
   export default function App() {
     return (
         <SafeAreaView style={styles.container}>
+            <View style={{
+                    backgroundColor: 'grey',
+                    // alignSelf: 'flex-start'
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                    //flexShrink is not used as often but it informs views to shrink if there is an overflow
+                    }}>
+
+                <Image 
+                fadeDuration={1000}
+                resizeMode={'contain'}
+                source={{
+                    width: 460,
+                    height: 650,
+                    uri: "https://picsum.photos/460/650"
+                }}
+                />
+                    </View>
             <View style={{
                     backgroundColor: 'white',
                     // alignSelf: 'flex-start'
@@ -16,7 +34,7 @@ import {
              <View style={{
                     backgroundColor: 'salmon',
                     // alignSelf: 'flex-start'
-                    flexBasis: 50, //flex basis can map the width or height depending on which is the primary axis
+                    flexBasis: 60, //flex basis can map the width or height depending on which is the primary axis
                     alignItems: 'center',
                     justifyContent: 'center'
                     }}><Text style={{color: 'white'}}>Login</Text></View>
@@ -24,7 +42,7 @@ import {
             <TouchableNativeFeedback onPress={() => console.log("You clicked the Register Button")}>
              <View style={{
                     backgroundColor: 'aqua',
-                    flexBasis: 50, //flex basis can map the width or height depending on which is the primary axis
+                    flexBasis: 60, //flex basis can map the width or height depending on which is the primary axis
                     alignItems: 'center',
                     justifyContent: 'center'
                     }}><Text style={{color: 'white'}}>Register</Text></View>
@@ -35,7 +53,6 @@ import {
   
   const styles = StyleSheet.create({
     container: {
-            backgroundColor: 'grey',
             flex: 1,
         },
   });
