@@ -15,11 +15,11 @@ import {
 
                 <Image 
                 fadeDuration={1000}
-                resizeMode={'contain'}
+                resizeMode={'cover'}
                 source={{
                     width: 460,
-                    height: 650,
-                    uri: "https://picsum.photos/460/650"
+                    height: 600,
+                    uri: "https://www.milgard.com/sites/default/files/styles/side_image/public/product-category/grid-image/content_block_700x500_tuscany01.jpg?itok=GHVWX1Ce"
                 }}
                 />
                 <View style={{position: 'absolute', top: 10, alignItems: 'center',}}>
@@ -29,7 +29,7 @@ import {
                     source={require('./assets/d-letter-logo.png')}
                     style={{width: 160, height: 160}}
                     />
-                    <Text style={{ color: "white", fontSize: "16"}}>Done With It</Text>
+                    <Text style={{ color: "red", fontSize: "16"}}>Done With It</Text>
                 </View>
                     </View>
             <View style={{
